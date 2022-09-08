@@ -31,17 +31,13 @@ open class ChineseCompletionContributor() : CompletionContributor() {
             return
         }
 
-        //feature:可暴力解决 bug:二次激活获取补全 但性能影响较大
-        if (pluginSettingsState.enableForceCompletion) {
-            parameters.withInvocationCount(2)
-        }
-
         val prefix = result.prefixMatcher.prefix
         println("prefix=${prefix}")
 
         val resultSet = result.withPrefixMatcher(CodePrefixMatcher(result.prefixMatcher))
         resultSet.addLookupAdvertisement("Rocket RSD")
 
+        // TODO 配置常用代码模板,然后使用 缩写关键词进行智能补全
         if (prefix.equals("rsd", true)) {
             resultSet.addElement(PrioritizedLookupElement.withPriority(ChineseLookupElement(code), 1000.0))
         }
