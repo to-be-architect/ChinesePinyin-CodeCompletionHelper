@@ -1,4 +1,4 @@
-package com.github.tuchg.nonasciicodecompletionhelper.config
+package com.github.aixcode.config
 
 /**
  * @author: tuchg

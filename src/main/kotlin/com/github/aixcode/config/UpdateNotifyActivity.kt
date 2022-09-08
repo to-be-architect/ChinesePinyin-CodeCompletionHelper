@@ -1,7 +1,7 @@
-package com.github.tuchg.nonasciicodecompletionhelper.config
+package com.github.aixcode.config
 
-import com.github.tuchg.nonasciicodecompletionhelper.utils.createNotification
-import com.github.tuchg.nonasciicodecompletionhelper.utils.showFullNotification
+import com.github.aixcode.utils.createNotification
+import com.github.aixcode.utils.showFullNotification
 import com.intellij.ide.plugins.IdeaPluginDescriptor
 import com.intellij.ide.plugins.PluginManagerCore
 import com.intellij.notification.NotificationListener.UrlOpeningListener

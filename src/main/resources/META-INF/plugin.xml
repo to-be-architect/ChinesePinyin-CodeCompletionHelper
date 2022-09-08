@@ -16,15 +16,15 @@
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="any"
                                 order="first"
-                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.completion.contributors.ChineseCompletionContributor"/>
+                                implementationClass="com.github.aixcode.completion.contributors.ChineseCompletionContributor"/>
         <postStartupActivity
-                implementation="com.github.tuchg.nonasciicodecompletionhelper.config.UpdateNotifyActivity"/>
+                implementation="com.github.aixcode.config.UpdateNotifyActivity"/>
 
         <applicationService
-                serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsState"/>
+                serviceImplementation="com.github.aixcode.config.PluginSettingsState"/>
         <applicationConfigurable
                 parentId="tools"
-                instance="com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsController"
+                instance="com.github.aixcode.config.PluginSettingsController"
                 displayName="Pinyin Completion Helper"
         />
         <notificationGroup id="Pinyin Completion Helper Notification Group" displayType="STICKY_BALLOON"/>

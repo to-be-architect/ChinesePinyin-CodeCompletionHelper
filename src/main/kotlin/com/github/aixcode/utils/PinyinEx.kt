@@ -1,4 +1,4 @@
-package com.github.tuchg.nonasciicodecompletionhelper.utils
+package com.github.aixcode.utils
 
 import com.intellij.util.containers.ContainerUtil
 import pansong291.simplepinyin.Pinyin

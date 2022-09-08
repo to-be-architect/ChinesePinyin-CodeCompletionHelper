@@ -1,5 +1,5 @@
-import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
-import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
+import com.github.aixcode.utils.countContainsSomeChar
+import com.github.aixcode.utils.toPinyin
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
 import org.junit.Assert
 import pansong291.simplepinyin.Pinyin

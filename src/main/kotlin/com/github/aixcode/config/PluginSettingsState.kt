@@ -1,4 +1,4 @@
-package com.github.tuchg.nonasciicodecompletionhelper.config
+package com.github.aixcode.config
 
 import com.intellij.openapi.components.ServiceManager.getService
 import com.intellij.openapi.components.PersistentStateComponent
@@ -13,9 +13,6 @@ import com.intellij.util.xmlb.XmlSerializerUtil.copyBean
  */
 @State(name = "CCompletionHelperSettings", storages = [(Storage("pinyin_completion_helper.xml"))])
 class PluginSettingsState : PersistentStateComponent<PluginSettingsState> {
-    // 提示方式设置，如全拼、五笔等
-    public var inputPattern: PatternType = PatternType.全拼
-    // 自定义码表，支持自定义码表 并提供图形支持
 
     // 用于解决一词多音不正确显示问题的选项
     public var enableCompleteMatch: Boolean = true

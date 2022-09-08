@@ -1,4 +1,4 @@
-package com.github.tuchg.nonasciicodecompletionhelper.config
+package com.github.aixcode.config
 
 import com.intellij.openapi.ui.ComboBox
 import com.intellij.ui.components.JBCheckBox
