@@ -3,12 +3,9 @@ package com.github.aixcode.completion
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.codeInsight.lookup.LookupElementPresentation
 
-/**
- * @author: tuchg
- * @date: 2020/8/6 21:46
- * @description:
- */
-class ChineseLookupElement(
+
+class CodeTemplateLookupElement(
+    private val codeOrigin: String,
     private val codeCompletion: String
 ) : LookupElement() {
 
@@ -23,7 +20,7 @@ class ChineseLookupElement(
      * 控制该项在补全列表最终显示效果
      */
     override fun renderElement(presentation: LookupElementPresentation) {
-        presentation.itemText = lookupString
+        presentation.itemText = "${codeOrigin}->${lookupString}"
     }
 
 }

@@ -16,7 +16,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="any"
                                 order="first"
-                                implementationClass="com.github.aixcode.completion.contributors.ChineseCompletionContributor"/>
+                                implementationClass="com.github.aixcode.completion.contributors.AiXCodeCompletionContributor"/>
         <postStartupActivity
                 implementation="com.github.aixcode.config.UpdateNotifyActivity"/>
 
