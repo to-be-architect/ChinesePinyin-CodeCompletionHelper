@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.github.tuchg.nonasciicodecompletionhelper</id>
-    <name>ChinesePinyin-CodeCompletionHelper</name>
+    <name>AIXCodeCompletionHelper</name>
     <vendor url="https://github.com/tuchg" email="wzcjava@gmail.com">tuchg</vendor>
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
@@ -25,9 +25,17 @@
         <applicationConfigurable
                 parentId="tools"
                 instance="com.github.aixcode.config.PluginSettingsController"
-                displayName="Pinyin Completion Helper"
+                displayName="AIXCoder Completion Helper"
         />
-        <notificationGroup id="Pinyin Completion Helper Notification Group" displayType="STICKY_BALLOON"/>
+        <notificationGroup id="AIXCoder Completion Helper Notification Group" displayType="STICKY_BALLOON"/>
 
     </extensions>
+
+    <actions>
+        <action id="com.github.aixcode.action.AIXCodeGenerateAction" class="com.github.aixcode.action.AIXCodeGenerateAction"
+                text="AIXCodeGenerate" description="AIXCodeGenerate">
+            <keyboard-shortcut first-keystroke="ctrl alt G" keymap="$default"/>
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>

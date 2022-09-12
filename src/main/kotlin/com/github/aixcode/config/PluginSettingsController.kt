@@ -31,16 +31,12 @@ class PluginSettingsController : Configurable {
         val settings: PluginSettingsState = PluginSettingsState.instance
         var modified: Boolean =
             mySettingsComponent?.getForceCompletionStatus()?.equals(settings.enableForceCompletion) == false
-//        modified =
-//            modified or (mySettingsComponent?.getCompleteMatchStatus()?.equals(settings.enableCompleteMatch) == false)
         return modified
     }
 
     override fun apply() {
         val settings: PluginSettingsState = PluginSettingsState.instance
-//        settings.ideaStatus = mySettingsComponent?.getIdeaUserStatus()
         settings.enableForceCompletion = mySettingsComponent?.getForceCompletionStatus() == true
-//        settings.enableCompleteMatch = mySettingsComponent?.getCompleteMatchStatus() == true
     }
 
     /**
@@ -49,7 +45,6 @@ class PluginSettingsController : Configurable {
     override fun reset() {
         val settings: PluginSettingsState = PluginSettingsState.instance
         mySettingsComponent?.setForceCompletionStatus(settings.enableForceCompletion)
-//        mySettingsComponent?.setCompleteMatchStatus(settings.enableCompleteMatch)
     }
 
     override fun disposeUIResources() {

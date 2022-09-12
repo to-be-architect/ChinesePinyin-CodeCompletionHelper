@@ -25,7 +25,11 @@ repositories {
     mavenLocal()
     mavenCentral()
 }
+
 dependencies {
+    implementation("com.github.kittinunf.fuel:fuel:2.3.1")
+    implementation("com.github.kittinunf.fuel:fuel-gson:2.3.1")
+    implementation("com.google.code.gson:gson:2.8.6")
 }
 
 // Configure gradle-intellij-plugin plugin.
@@ -70,43 +74,17 @@ tasks {
         untilBuild.set(properties("pluginUntilBuild"))
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription.set(
-            File(projectDir, "README.md").readText().lines().run {
-                val start = "<!-- Plugin description -->"
-                val end = "<!-- Plugin description end -->"
-
-                if (!containsAll(listOf(start, end))) {
-                    throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
-                }
-                subList(indexOf(start) + 1, indexOf(end))
-            }.joinToString("\n").run {
-                val last = this.replaceFirst(
-                    "<!-- E -->",
-                    // language=HTML
-                    """
-<h3>English</h3>
-
-> The original intention is that for some businesses that are not suitable for expression in English, you can use a straightforward native language instead of pinyin, and then call what is expressed in your native language as you usually write code to solve some naming difficulties 🤔
-
-Let your IDE support Chinese programming, and enjoy the Chinese intelligent coding experience consistent with the English environment
-
-* Input pinyin completion. Chinese identifier will be shown below. Input `zw` and prompt 中文 [**Z**hong **W**en].
-* Polyphonic words complete without difference
-* Support all identifiers, including variable names, function names, and class names
-
-Compatible with all the Intellij Platform product, indiscriminate Chinese programming, Java, Kotlin, JavaScript, C#，Golang, or Haskell all support...
-
-> 为啥这里会有一段不符合插件受众的别扭英文介绍💬  <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/5">#issues-5</a>
-
-<h3>中文</h3>
+            markdownToHTML(
+                """
+<h3>aiXCoder</h3>
 """
-                )
-                markdownToHTML(last)
-            }
+            )
         )
 
         // Get the latest available change notes from the changelog file
         changeNotes.set(provider { changelog.getLatest().toHTML() })
     }
+
     runPluginVerifier {
         ideVersions.set(properties("pluginVerifierIdeVersions").split(',').map(String::trim).filter(String::isNotEmpty))
     }
